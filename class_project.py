@@ -4,14 +4,15 @@ print "+++++++++++++++++++++++\nSAN FRANCISCO ADVENTURE\n+++++++++++++++++++++++
 Prompt user to make a decision, go home or grab some dinner. Use foursquare api to list popular places in the SOMA area.
 
 """
+import FoursquareAPI
 # def pause():
-# 	print ('Press enter to continue')
-# 	input()
+# print ('Press enter to continue')
+# # 	input()
 def intro():
 	print "The clock finally strikes 5p and you bolt out the front door of your office in SOMA.\nYay! Thank God it's Friday night and you just got paid!"
 	print "Now what? Do you want to 'go home' or grab a bite to 'eat'?"
 	first_decision=str(raw_input("Type 'go home' or 'eat'"))
-	#for eat decision, use foursquare api for trending places in SOMA?
+	#for eat decision, use foursquare api for trending places in SOMA
 	if first_decision=="go home":
 		print "Wow! What a boring way to start the weekend. You go home and fall asleep while watching Netflix. Your SF adventure is over."
 	elif first_decision=="eat":
@@ -25,6 +26,7 @@ def headhome():
 	print "You're over everything and just want to binge watch LOST on Netflix.\nYou head home and stay in for the weekend."
 	
 def outToeat():
+	FoursquareAPI.getvenues()
 	food_choice=str(raw_input("What place around here looks good to you?"))
 	print "Oh nice choice!", food_choice, "has really good food."
 	print "You walk over to",food_choice, "\nWhen you open the door you see a familiar face standing in line, it's your best friend!"
